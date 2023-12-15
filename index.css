@@ -1,9 +1,13 @@
-.header{
+.header {
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
 }
+
 .icons {
     width: 30px;
     height: 30px;
 }
+
+/* .title {
+    font-size: 60px;
+} */
