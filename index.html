@@ -37,6 +37,8 @@
                 <img src="images/black_background.jpg" alt="Game 3">
             </div>
         </div>
+        
+
         <div class="row">
             <div class="gameBox">
                 <img src="images/black_background.jpg" alt="Game 4">
@@ -51,6 +53,35 @@
             </div>
         </div>
     </div>
+
+
+    <script>
+        // Add this script to handle the click event
+        document.addEventListener('DOMContentLoaded', function () {
+            var gameBoxes = document.querySelectorAll('.gameBox');
+
+            gameBoxes.forEach(function (box) {
+                box.addEventListener('click', function () {
+                    // Reset all boxes to default size and position
+                    gameBoxes.forEach(function (resetBox) {
+                        resetBox.classList.remove('expanded');
+                        resetBox.classList.add('shrunken');
+                    });
+
+                    // Expand the clicked box
+                    box.classList.remove('shrunken');
+                    box.classList.add('expanded');
+
+                    // Move other boxes to the right column
+                    gameBoxes.forEach(function (moveBox) {
+                        if (moveBox !== box) {
+                            moveBox.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
