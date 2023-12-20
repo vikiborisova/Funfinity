@@ -11,7 +11,7 @@
 <body>
     <div class="header">
         <div>
-            <img class="icons" src="images/back.png" alt="back">
+            <a href="#" id="resetButton"><img class="icons" src="images/back.png" alt="back"></a>
             <img class="icons" src="images/next.png" alt="next">
         </div>
         <div class="title">
@@ -24,7 +24,7 @@
     </div>
 
     <div class="containers">
-        <div class="row">
+        <div class="col">
             <div class="gameBox">
                 <img src="images/black_background.jpg" alt="Game 1">
             </div>
@@ -32,22 +32,23 @@
             <div class="gameBox">
                 <img src="images/black_background.jpg" alt="Game 2">
             </div>
+        </div>
 
+        <div class="col">
             <div class="gameBox">
                 <img src="images/black_background.jpg" alt="Game 3">
             </div>
-        </div>
-        
 
-        <div class="row">
             <div class="gameBox">
                 <img src="images/black_background.jpg" alt="Game 4">
             </div>
+        </div>
 
+
+        <div class="col">
             <div class="gameBox">
                 <img src="images/black_background.jpg" alt="Game 5">
             </div>
-            
 
             <div class="gameBox">
                 <img src="images/black_background.jpg" alt="Game 6">
@@ -57,29 +58,44 @@
 
 
     <script>
-        // Add this script to handle the click event
         document.addEventListener('DOMContentLoaded', function () {
             var gameBoxes = document.querySelectorAll('.gameBox');
 
             gameBoxes.forEach(function (box) {
                 box.addEventListener('click', function () {
-                    // Reset all boxes to default size and position
-                    gameBoxes.forEach(function (resetBox) {
-                        resetBox.classList.remove('expanded');
-                        resetBox.classList.add('shrunken');
-                    });
-
-                    // Expand the clicked box
-                    box.classList.remove('shrunken');
-                    box.classList.add('expanded');
-
-                    // Move other boxes to the right column
-                    gameBoxes.forEach(function (moveBox) {
-                        if (moveBox !== box) {
-                            moveBox.classList.add('hidden');
+                    // Hide other game boxes
+                    gameBoxes.forEach(function (otherBox) {
+                        if (otherBox !== box) {
+                            otherBox.classList.add('hidden');
                         }
                     });
+
+                    // Enlarge the clicked game box
+                    box.classList.add('enlarged');
+
+                    // Add an event listener to the enlarged box to reset on click
+                    function resetHandler() {
+                        // Show all game boxes
+                        gameBoxes.forEach(function (otherBox) {
+                            otherBox.classList.remove('hidden');
+                        });
+
+                        // Remove enlargement
+                        box.classList.remove('enlarged');
+
+                        // Remove the temporary reset handler
+                        box.removeEventListener('click', resetHandler);
+                    }
+
+                    // Add the reset handler
+                    box.addEventListener('click', resetHandler);
                 });
+            });
+
+            var resetButton = document.getElementById('resetButton');
+
+            resetButton.addEventListener('click', function () {
+                location.reload(); // Reloads the page
             });
         });
     </script>
