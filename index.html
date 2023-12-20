@@ -59,18 +59,18 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+
             var gameBoxes = document.querySelectorAll('.gameBox');
 
             gameBoxes.forEach(function (box) {
                 box.addEventListener('click', function () {
-                    //skriva
-                    gameBoxes.forEach(function (otherBox) {
-                        if (otherBox !== box) {
-                            otherBox.classList.add('hidden');
+                    //skriva drugite
+                    gameBoxes.forEach(function (otherBoxes) {
+                        if (otherBoxes !== box) {
+                            otherBoxes.classList.add('hidden');
                         }
                     });
-
-                    //ugolemqva 
+                    //ugolemqva clicknatiq
                     box.classList.add('enlarged');
                 });
             });

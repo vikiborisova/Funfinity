@@ -32,9 +32,9 @@
 .enlarged {
     position: fixed;
     top: 50%;
-    left: 64%;
-    transform: translate(-50%, -50%);
-    width: 90%;
+    left: 50%;
+    transform: translate(-21%, -50%);
+    /* background-color: black; */
 }
 
 .hidden {
