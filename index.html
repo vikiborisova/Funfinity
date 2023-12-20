@@ -63,39 +63,22 @@
 
             gameBoxes.forEach(function (box) {
                 box.addEventListener('click', function () {
-                    // Hide other game boxes
+                    //skriva
                     gameBoxes.forEach(function (otherBox) {
                         if (otherBox !== box) {
                             otherBox.classList.add('hidden');
                         }
                     });
 
-                    // Enlarge the clicked game box
+                    //ugolemqva 
                     box.classList.add('enlarged');
-
-                    // Add an event listener to the enlarged box to reset on click
-                    function resetHandler() {
-                        // Show all game boxes
-                        gameBoxes.forEach(function (otherBox) {
-                            otherBox.classList.remove('hidden');
-                        });
-
-                        // Remove enlargement
-                        box.classList.remove('enlarged');
-
-                        // Remove the temporary reset handler
-                        box.removeEventListener('click', resetHandler);
-                    }
-
-                    // Add the reset handler
-                    box.addEventListener('click', resetHandler);
                 });
             });
 
             var resetButton = document.getElementById('resetButton');
 
             resetButton.addEventListener('click', function () {
-                location.reload(); // Reloads the page
+                location.reload(); //prezarejda stranicata
             });
         });
     </script>
