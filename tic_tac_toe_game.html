@@ -13,25 +13,26 @@
         <br><br>
         <div class="grid">
             <div class="row">
-                <input type="text" id="c1" class="cell" onclick="myfunc_3(); myfunc();" readonly>
-                <input type="text" id="c2" class="cell" onclick="myfunc_4(); myfunc();" readonly>
-                <input type="text" id="c3" class="cell" onclick="myfunc_5(); myfunc();" readonly>
+                <input type="text" id="c1" class="cell" onclick="turn1(); Tic_Tac_Toe();" readonly>
+                <input type="text" id="c2" class="cell" onclick="turn2(); Tic_Tac_Toe();" readonly>
+                <input type="text" id="c3" class="cell" onclick="turn3(); Tic_Tac_Toe();" readonly>
             </div>
             <div class="row">
-                <input type="text" id="c4" class="cell" onclick="myfunc_6(); myfunc();" readonly>
-                <input type="text" id="c5" class="cell" onclick="myfunc_7(); myfunc();" readonly>
-                <input type="text" id="c6" class="cell" onclick="myfunc_8(); myfunc();" readonly>
+                <input type="text" id="c4" class="cell" onclick="turn4(); Tic_Tac_Toe();" readonly>
+                <input type="text" id="c5" class="cell" onclick="turn5(); Tic_Tac_Toe();" readonly>
+                <input type="text" id="c6" class="cell" onclick="turn6(); Tic_Tac_Toe();" readonly>
             </div>
             <div class="row">
-                <input type="text" id="c7" class="cell" onclick="myfunc_9(); myfunc();" readonly>
-                <input type="text" id="c8" class="cell" onclick="myfunc_10();myfunc();" readonly>
-                <input type="text" id="c9" class="cell" onclick="myfunc_11();myfunc();" readonly>
+                <input type="text" id="c7" class="cell" onclick="turn7(); Tic_Tac_Toe();" readonly>
+                <input type="text" id="c8" class="cell" onclick="turn8(); Tic_Tac_Toe();" readonly>
+                <input type="text" id="c9" class="cell" onclick="turn9(); Tic_Tac_Toe();" readonly>
             </div>
         </div>
         <br><br><br>
 
         <button id="resetButton" onclick="resetFunc()">RESET</button>
         <br><br>
+        <p id="print"></p> 
     </div>
 </body>
 
