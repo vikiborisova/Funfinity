@@ -1,0 +1,101 @@
+.grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    border: none;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.cell:active {
+    outline: none;
+}
+
+/* 3 na 3 grid */
+#c1 {
+    border-bottom: 1px solid rgb(0, 0, 0);
+    border-right: 1px solid gray;
+}
+
+#c2 {
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+    border-left: 1px solid gray;
+}
+
+#c3 {
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+}
+
+#c4 {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+#c5 {
+    border: 1px solid gray;
+}
+
+#c6 {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+}
+
+#c7 {
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+#c8 {
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+    border-left: 1px solid gray;
+}
+
+#c9 {
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+}
+
+#resetButton {
+    box-sizing: border-box;
+    width: 95px;
+    height: 40px;
+    border: 1px solid dodgerblue;
+    margin-left: auto;
+    border-radius: 8px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: whitesmoke;
+    color: dodgerblue;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#main {
+    text-align: center;
+}
+
+h1 {
+    color: rgb(0, 0, 0);
+    margin-bottom: -5px;
+}
+
+p {
+    margin-bottom: -10px;
+}

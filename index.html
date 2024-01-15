@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1024">
     <link rel="stylesheet" type="text/css" href="index.css" />
     <title>Funfinity</title>
 </head>
@@ -55,33 +55,6 @@
             </div>
         </div>
     </div>
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-
-            var gameBoxes = document.querySelectorAll('.gameBox');
-
-            gameBoxes.forEach(function (box) {
-                box.addEventListener('click', function () {
-                    //skriva drugite
-                    gameBoxes.forEach(function (otherBoxes) {
-                        if (otherBoxes !== box) {
-                            otherBoxes.classList.add('hidden');
-                        }
-                    });
-                    //ugolemqva clicknatiq
-                    box.classList.add('enlarged');
-                });
-            });
-
-            var resetButton = document.getElementById('resetButton');
-
-            resetButton.addEventListener('click', function () {
-                location.reload(); //prezarejda stranicata
-            });
-        });
-    </script>
 </body>
 
 </html>
