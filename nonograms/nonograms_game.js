@@ -68,7 +68,6 @@ function generateField() {
     let maxKeys;
     // Optimal values by my personal opinion :)
     // Switched by the level of 5:
-    // ex. 3 keys for 15x15, 6 keys for 25x25 etc
     switch (Math.floor(h / 5)) {
         case 1:
             maxKeys = 2;

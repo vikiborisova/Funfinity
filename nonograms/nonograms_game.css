@@ -1,62 +1,87 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+@import url('https://fonts.cdnfonts.com/css/games');
 
 #game {
     border-spacing: 0px;
     border-collapse: collapse;
     border: 1px solid black;
     user-select: none;
+}
+.title{
+    font-family: 'Games', sans-serif;
+    font-size: 50px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-    td,
-    th {
-        width: 28px;
-        height: 28px;
-        padding: 4px;
-        line-height: 1.5;
-        white-space: nowrap;
+.nonogram {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
-        &:nth-child(5n + 1) {
-            border-right: 1px solid black;
-        }
+.parameters {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.buttons {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+td,
+th {
+    width: 28px;
+    height: 28px;
+    padding: 4px;
+    line-height: 1.5;
+    white-space: nowrap;
+
+    &:nth-child(20n + 1) {
+        border-right: 1px solid black;
     }
+}
 
-    tr {
-        &:nth-child(5n + 1) {
+tr {
+    &:nth-child(20n + 1) {
 
-            td,
-            th {
-                border-bottom: 1px solid black;
-            }
-        }
-    }
-
-    th {
-        background-color: #eee;
-        font-family: 'Ubuntu Mono', monospace;
-
-        &.highlight {
-            background-color: #ccc;
-        }
-    }
-
-    td {
-        border-top: 1px dotted #aaa;
-        border-left: 1px dotted #aaa;
-
-        &:hover {
-            opacity: 0.85;
-            background-color: #f3f3f3;
-        }
-
-        &.on {
-            background-color: #6d6;
-        }
-
-        &.off {
-            background-color: #666;
+        td,
+        th {
+            border-bottom: 1px solid black;
         }
     }
 }
 
-#settings {
-    margin-top: 15px;
+th {
+    background-color: #eee;
+    font-family: 'Ubuntu Mono', monospace;
+
+    &.highlight {
+        background-color: #ccc;
+    }
+}
+
+td {
+    border-top: 1px dotted #aaa;
+    border-left: 1px dotted #aaa;
+
+    &:hover {
+        opacity: 0.85;
+        background-color: #f3f3f3;
+    }
+
+    &.on {
+        background-color: #6d6;
+    }
+
+    &.off {
+        background-color: #666;
+    }
 }
