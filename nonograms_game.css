@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+
+#game {
+    border-spacing: 0px;
+    border-collapse: collapse;
+    border: 1px solid black;
+    user-select: none;
+
+    td,
+    th {
+        width: 28px;
+        height: 28px;
+        padding: 4px;
+        line-height: 1.5;
+        white-space: nowrap;
+
+        &:nth-child(5n + 1) {
+            border-right: 1px solid black;
+        }
+    }
+
+    tr {
+        &:nth-child(5n + 1) {
+
+            td,
+            th {
+                border-bottom: 1px solid black;
+            }
+        }
+    }
+
+    th {
+        background-color: #eee;
+        font-family: 'Ubuntu Mono', monospace;
+
+        &.highlight {
+            background-color: #ccc;
+        }
+    }
+
+    td {
+        border-top: 1px dotted #aaa;
+        border-left: 1px dotted #aaa;
+
+        &:hover {
+            opacity: 0.85;
+            background-color: #f3f3f3;
+        }
+
+        &.on {
+            background-color: #6d6;
+        }
+
+        &.off {
+            background-color: #666;
+        }
+    }
+}
+
+#settings {
+    margin-top: 15px;
+}
