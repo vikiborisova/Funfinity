@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .header
 {
     margin-top: 10px;
@@ -6,4 +7,8 @@
 {
     width: 220px;
     height: 220px;
+=======
+.header {
+    margin-top: 0.5%;
+>>>>>>> 8bc077008888270def2946ec0a9770cbfe56ab56
 }
