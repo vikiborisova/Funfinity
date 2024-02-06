@@ -284,6 +284,7 @@ function resetFunc() {
 // proverqva koi igrach e na hod, i izbira stoinost X ili 0
 //purvi vinagi zapochva X
 flag = 1;
+
 function turn1() {
 	if (flag == 1) {
 		document.getElementById("c1").value = "X";
