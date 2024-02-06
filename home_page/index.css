@@ -1,42 +1,9 @@
-.header {
-    display: flex;
-    justify-content: space-between;
+.header
+{
+    margin-top: 10px;
 }
-
-.icons {
-    width: 30px;
-    height: 30px;
-}
-
-.title {
-    font-size: 60px;
-    margin-top: -80px;
-}
-
-.containers {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 80px;
-}
-
-.gameBox {
-    width: 50%;
-}
-
-.col {
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
-}
-
-.enlarged {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-21%, -50%);
-    /* background-color: black; */
-}
-
-.hidden {
-    display: none;
+.games
+{
+    width: 220px;
+    height: 220px;
 }
