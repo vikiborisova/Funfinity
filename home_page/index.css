@@ -1,14 +1,38 @@
-<<<<<<< HEAD
-.header
-{
-    margin-top: 10px;
-}
-.games
-{
-    width: 220px;
-    height: 220px;
-=======
+@import url('https://fonts.cdnfonts.com/css/games');
+
 .header {
     margin-top: 0.5%;
->>>>>>> 8bc077008888270def2946ec0a9770cbfe56ab56
+}
+
+body {
+    background-color: #adb5bd;
+}
+
+.title {
+    font-family: 'Games', sans-serif;
+    color: #3e3d40;
+    font-size: 80px;
+}
+
+.logo {
+    width: 50px;
+    height: 30px;
+}
+
+.icons {
+    width: 30px;
+    height: 30px;
+}
+.games{
+    height: 170px;
+    width: 170px;
+}
+.grid{
+    padding: 30px;
+}
+.cell{
+    padding: 10px;
+}
+.container{
+    margin-top: 20px;
 }
