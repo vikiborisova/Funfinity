@@ -26,6 +26,7 @@ body {
 .games{
     height: 170px;
     width: 170px;
+    border: 2px solid black;
 }
 .grid{
     padding: 30px;
