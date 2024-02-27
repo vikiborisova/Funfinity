@@ -1,4 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/games');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 .header {
     margin-top: 0.5%;
@@ -7,6 +8,53 @@
 body {
     background-color: #adb5bd;
 }
+
+* {
+    box-sizing: border-box;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-label {
+    background-color: red;
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkbox-label .ball {
+    background-color: #fff;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked+.checkbox-label .ball {
+    transform: translateX(24px);
+}
+
+
+#soundCheckbox:checked+.checkbox-label {
+    background-color: green;
+}
+#themeCheckbox:checked+.checkbox-label {
+    background-color: green;
+}
+
+
 
 .title {
     font-family: 'Games', sans-serif;
@@ -23,17 +71,25 @@ body {
     width: 30px;
     height: 30px;
 }
-.games{
+
+.games {
     height: 170px;
     width: 170px;
     border: 2px solid black;
 }
-.grid{
+
+.grid {
     padding: 30px;
 }
-.cell{
+
+.cell {
     padding: 10px;
 }
-.container{
+
+.container {
     margin-top: 20px;
+}
+
+body.dark {
+    background-color: #3e3d40;
 }
