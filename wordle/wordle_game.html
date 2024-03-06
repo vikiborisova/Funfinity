@@ -1,22 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="wordle_game.css">
-    <title>WORDLE</title>
+    <link rel="stylesheet" href="../wordle/wordle_game.css">
+    <title>Wordle Game</title>
 </head>
+
 <body>
-    <h1>WORDLE</h1>
-    <div id="game">
-        <div class="grid">
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-        </div>
-    </div>
-    <script defer src="wordle_game.js" type="module"></script>
+
+    <main>
+        <section id="menu">
+            <div id="new-word" title="New Word" class="key" data-key="newword">
+                <svg id="new-word-icon" viewBox="0 0 512 512" width="100" title="redo-alt">
+                    <path
+                        d="M256.455 8c66.269.119 126.437 26.233 170.859 68.685l35.715-35.715C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.75c-30.864-28.899-70.801-44.907-113.23-45.273-92.398-.798-170.283 73.977-169.484 169.442C88.764 348.009 162.184 424 256 424c41.127 0 79.997-14.678 110.629-41.556 4.743-4.161 11.906-3.908 16.368.553l39.662 39.662c4.872 4.872 4.631 12.815-.482 17.433C378.202 479.813 319.926 504 256 504 119.034 504 8.001 392.967 8 256.002 7.999 119.193 119.646 7.755 256.455 8z" />
+                </svg>
+            </div>
+            <div id="give-up" title="Give Up" class="key" data-key="giveup">
+                <svg id="give-up-icon" viewBox="0 0 512 512" width="100" title="window-close">
+                    <path
+                        d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z" />
+                </svg>
+            </div>
+        </section>
+        <section id="entries">
+            <!--   first entry   -->
+            <div class="entry">
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+            </div>
+            <!--   second entry   -->
+            <div class="entry">
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+            </div>
+            <!--   third entry   -->
+            <div class="entry">
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+            </div>
+            <!--   fourth entry   -->
+            <div class="entry">
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+            </div>
+            <!--   fifth entry   -->
+            <div class="entry">
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+            </div>
+            <!--   sixth entry   -->
+            <div class="entry">
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+                <div class="letter empty"></div>
+            </div>
+
+        </section>
+        <section id="keyboard">
+            <!--   row 1   -->
+            <div class="row">
+                <div class="key letter-key" data-key="q">Q</div>
+                <div class="key letter-key" data-key="w">W</div>
+                <div class="key letter-key" data-key="e">E</div>
+                <div class="key letter-key" data-key="r">R</div>
+                <div class="key letter-key" data-key="t">T</div>
+                <div class="key letter-key" data-key="y">Y</div>
+                <div class="key letter-key" data-key="u">U</div>
+                <div class="key letter-key" data-key="i">I</div>
+                <div class="key letter-key" data-key="o">O</div>
+                <div class="key letter-key" data-key="p">P</div>
+            </div>
+            <!--   row 2   -->
+            <div class="row">
+                <div class="key letter-key" data-key="a">A</div>
+                <div class="key letter-key" data-key="s">S</div>
+                <div class="key letter-key" data-key="d">D</div>
+                <div class="key letter-key" data-key="f">F</div>
+                <div class="key letter-key" data-key="g">G</div>
+                <div class="key letter-key" data-key="h">H</div>
+                <div class="key letter-key" data-key="j">J</div>
+                <div class="key letter-key" data-key="k">K</div>
+                <div class="key letter-key" data-key="l">L</div>
+            </div>
+            <!--   row 3   -->
+            <div class="row">
+                <div id="enter" class="key special-key" title="Enter" data-key="enter">
+                    <svg id="enter-icon" viewBox="0 0 448 512" width="100" title="arrow-up">
+                        <path
+                            d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z" />
+                    </svg>
+                </div>
+
+                <div class="key letter-key" data-key="z">Z</div>
+                <div class="key letter-key" data-key="x">X</div>
+                <div class="key letter-key" data-key="c">C</div>
+                <div class="key letter-key" data-key="v">V</div>
+                <div class="key letter-key" data-key="b">B</div>
+                <div class="key letter-key" data-key="n">N</div>
+                <div class="key letter-key" data-key="m">M</div>
+
+                <div id="backspace" class="key special-key" title="Backspace" data-key="backspace">
+                    <svg id="backspace-icon" viewBox="0 0 640 512" width="100" title="backspace">
+                        <path
+                            d="M576 64H205.26A63.97 63.97 0 0 0 160 82.75L9.37 233.37c-12.5 12.5-12.5 32.76 0 45.25L160 429.25c12 12 28.28 18.75 45.25 18.75H576c35.35 0 64-28.65 64-64V128c0-35.35-28.65-64-64-64zm-84.69 254.06c6.25 6.25 6.25 16.38 0 22.63l-22.62 22.62c-6.25 6.25-16.38 6.25-22.63 0L384 301.25l-62.06 62.06c-6.25 6.25-16.38 6.25-22.63 0l-22.62-22.62c-6.25-6.25-6.25-16.38 0-22.63L338.75 256l-62.06-62.06c-6.25-6.25-6.25-16.38 0-22.63l22.62-22.62c6.25-6.25 16.38-6.25 22.63 0L384 210.75l62.06-62.06c6.25-6.25 16.38-6.25 22.63 0l22.62 22.62c6.25 6.25 6.25 16.38 0 22.63L429.25 256l62.06 62.06z" />
+                    </svg>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="modal"></div>
+        <div id="overlay"></div>
+    </main>
+
+
+
+    <script src="../wordle/wordle_game.js"></script>
 </body>
+
 </html>
