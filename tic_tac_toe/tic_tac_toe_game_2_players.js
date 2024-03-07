@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentPlayer = "X";
     let gameActive = true;
     let score = {
-        player: 0,
-        computer: 0,
+        player1: 0,
+        player2: 0,
         ties: 0
     };
 
@@ -60,14 +60,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateScore(winner) {
         if (winner === "X") {
-            score.player++;
+            score.player1++;
         } else if (winner === "O") {
-            score.computer++;
+            score.player2++;
         } else {
             score.ties++;
         }
 
-        scoreElement.textContent = `Player: ${score.player} | Computer: ${score.computer} | Ties: ${score.ties}`;
+        scoreElement.textContent = `Player X: ${score.player1} | Player O: ${score.player2} | Ties: ${score.ties}`;
     }
 
     function resetGame() {
