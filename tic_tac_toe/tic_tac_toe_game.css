@@ -11,12 +11,7 @@ body {
 .title {
     font-family: 'Games', sans-serif;
     color: #3e3d40;
-    font-size: 80px;
-}
-
-.title1 {
-    color: #3e3d40;
-    font-size: 40px;
+    font-size: 13vh;
 }
 
 .logo {
@@ -31,25 +26,52 @@ body {
 
 #board {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
-    gap: 5px;
+    grid-template-columns: repeat(3, 15vh);
     margin: auto;
+    border: 1px solid #000000;
 }
 
 .cell {
-    width: 100px;
-    height: 100px;
+    width: 15vh;
+    height: 15vh;
     border: 1px solid #000000;
     font-size: 2em;
+    text-align: center;
     cursor: pointer;
 }
 
 #result {
-    font-size: 1.5em;
+    font-size: 4vh
 }
 
 #score {
-    font-size: 1.2em;
+    font-size: 3vh
+}
+
+.play {
+    text-align: center;
+    display: inline-block;
+    margin: 5px;
+    font-weight: bold;
+    padding: 10px 20px 10px 20px;
+    background-color: #adb5bd;
+    text-shadow: -1px -1px black, 1px 1px white;
+    color: #3e3d40;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -o-border-radius: 7px;
+    border-radius: 7px;
+    box-shadow: 0 .2em #3e3d40;
+    cursor: pointer;
+    font-size: 3vh;
+
+}
+
+.records{
+    height: 30vh;
+    width: 50vw;
+    border: 2px solid black;
+    border-radius: 10%;
 }
 
 
