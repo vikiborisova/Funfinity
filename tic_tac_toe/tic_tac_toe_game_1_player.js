@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     const board = document.getElementById("board");
     const resultElement = document.getElementById("result");
-    const scoreElement = document.getElementById("score");
+    const scoreElement1= document.getElementById("score1");
+    const scoreElement2 = document.getElementById("score2");
+    const scoreElement3 = document.getElementById("score3");
     const resetBtn = document.getElementById("resetBtn");
 
     let boardState = Array(9).fill(null);
@@ -41,11 +43,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (checkWinner()) {
             gameActive = false;
-            resultElement.textContent = `Player ${currentPlayer} wins!`;
+            resultElement.textContent = `Играчът печели!`;
             updateScore(currentPlayer);
         } else if (boardState.every(cell => cell !== null)) {
             gameActive = false;
-            resultElement.textContent = "It's a tie!";
+            resultElement.textContent = "Равни!";
             updateScore("tie");
         } else {
             currentPlayer = currentPlayer === "X" ? "O" : "X";
@@ -110,11 +112,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (checkWinner()) {
             gameActive = false;
-            resultElement.textContent = "Computer wins!";
+            resultElement.textContent = "Компютърът печели!";
             updateScore("O");
         } else if (boardState.every(cell => cell !== null)) {
             gameActive = false;
-            resultElement.textContent = "It's a tie!";
+            resultElement.textContent = "Равни!";
             updateScore("tie");
         } else {
             currentPlayer = currentPlayer === "X" ? "O" : "X";
@@ -136,7 +138,9 @@ document.addEventListener("DOMContentLoaded", function () {
             score.ties++;
         }
 
-        scoreElement.textContent = `Player: ${score.player} | Computer: ${score.computer} | Ties: ${score.ties}`;
+        scoreElement1.textContent = `Играч: ${score.player}`;
+        scoreElement2.textContent = `Компютър: ${score.computer}`;
+        scoreElement3.textContent = `Равни: ${score.ties}`;
     }
 
     function resetGame() {

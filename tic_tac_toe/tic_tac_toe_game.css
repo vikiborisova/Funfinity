@@ -8,12 +8,6 @@ body {
     margin-top: 0.5%;
 }
 
-.title {
-    font-family: 'Games', sans-serif;
-    color: #3e3d40;
-    font-size: 13vh;
-}
-
 .logo {
     width: 50px;
     height: 30px;
@@ -68,7 +62,7 @@ body {
 }
 
 .records{
-    height: 30vh;
+    height: 40vh;
     width: 50vw;
     border: 2px solid black;
     border-radius: 10%;
