@@ -27,7 +27,6 @@ if (!window.requestAnimationFrame) { // http://paulirish.com/2011/requestanimati
 
 var KEY = { ESC: 27, SPACE: 32, LEFT: 37, UP: 38, RIGHT: 39, DOWN: 40 },
     DIR = { UP: 0, RIGHT: 1, DOWN: 2, LEFT: 3, MIN: 0, MAX: 3 },
-    stats = new Stats(),
     canvas = get('canvas'),
     ctx = canvas.getContext('2d'),
     ucanvas = get('upcoming'),
@@ -129,29 +128,23 @@ function randomPiece() {
 
 function run() {
 
-    showStats(); // initialize FPS counter
-    addEvents(); // attach keydown and resize events
+    addEvents();
 
     var last = now = timestamp();
     function frame() {
         now = timestamp();
-        update(Math.min(1, (now - last) / 1000.0)); // using requestAnimationFrame have to be able to handle large delta's caused when it 'hibernates' in a background or non-visible tab
+        update(Math.min(1, (now - last) / 1000.0)); 
         draw();
-        stats.update();
         last = now;
         requestAnimationFrame(frame, canvas);
     }
 
-    resize(); // setup all our sizing information
-    reset();  // reset the per-game variables
-    frame();  // start the first frame
+    resize(); 
+    reset(); 
+    frame();  
 
 }
 
-function showStats() {
-    stats.domElement.id = 'stats';
-    get('menu').appendChild(stats.domElement);
-}
 
 function addEvents() {
     document.addEventListener('keydown', keydown, false);
@@ -192,7 +185,7 @@ function keydown(ev) {
 // GAME LOGIC
 //-------------------------------------------------------------------------
 
-function play() { hide('start'); reset(); playing = true; }
+function play() { show('start'); reset(); playing = true; }
 function lose() { show('start'); setVisualScore(); playing = false; }
 
 function setVisualScore(n) { vscore = n || score; invalidateScore(); }
