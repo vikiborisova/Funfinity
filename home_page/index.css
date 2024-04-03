@@ -1,13 +1,12 @@
 @import url('https://fonts.cdnfonts.com/css/games');
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 .header {
-    margin-top: 0.5%;
     border-bottom: 3px solid #3e3d40;
 }
 
 body {
     background-color: #adb5bd;
+    width: 100%;
 }
 
 * {
@@ -74,12 +73,6 @@ body {
     height: 30px;
 }
 
-.games {
-    height: 170px;
-    width: 170px;
-    border: 2px solid black;
-}
-
 .grid {
     padding: 30px;
 }
@@ -96,56 +89,72 @@ body {
     height: 100vh;
     transition: 500ms;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 3px;
+    grid-template-columns: 25fr 25fr 25fr 25fr;
     background: #3e3d40;
+    border-top: 4px solid #3e3d40;
+    gap: 2px;
 }
 
-:where(.left-center, .center, .center-center, .right-center, .right) {
-    width: 100%;
+:where(.left, .left-center, .right-center, .right) {
+    width: 99%;
     height: 100%;
     background: #adb5bd;
     transition: 300ms;
 }
-
-:where(.left) {
-    background-image: url(../images/tic_tac_toe.png);
+.left {
+    background-image: url(../images/tic_tac_toe_logo.png);
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6); 
 }
 
-:where(.left, .left-center, .center, .center-center, .right-center, .right):hover {
-    width: 100%;
+.left-center {
+    background-image: url(../images/nonograms_logo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6); 
+}
+
+.right-center {
+    background-image: url(../images/tetris_logo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6); 
+}
+
+.right {
+    background-image: url(../images/2048_logo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6);
+}
+
+
+:where(.left, .left-center, .right-center, .right):hover {
+    width: 99%;
     height: 100%;
 }
 
 #grid:has(.left:hover) {
-    grid-template-columns: 2fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
-    background-image: url(../images/tic_tac_toe.png);
-    background-repeat: no-repeat;
-
+    grid-template-columns: 46fr 18fr 18fr 18fr;
 }
 
 #grid:has(.left-center:hover) {
-    grid-template-columns: 0.5fr 2fr 0.5fr 0.5fr 0.5fr 0.5fr;
+    grid-template-columns: 18fr 46fr 18fr 18fr;
 }
 
-
-#grid:has(.center:hover) {
-    grid-template-columns: 0.5fr 0.5fr 2fr 0.5fr 0.5fr 0.5fr;
-}
-
-
-#grid:has(.center-center:hover) {
-    grid-template-columns: 0.5fr 0.5fr 0.5fr 2fr 0.5fr 0.5fr;
-}
 
 #grid:has(.right-center:hover) {
-    grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 2fr 0.5fr;
+    grid-template-columns: 18fr 18fr 46fr 18fr;
 }
 
 
 #grid:has(.right:hover) {
-    grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 2fr;
+    grid-template-columns: 18fr 18fr 18fr 46fr;
 }
 
 
