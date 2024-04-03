@@ -507,3 +507,24 @@ document.getElementById("new-game").onclick = reload;
 document.getElementById("solution").onclick = showSolution;
 
 reset();
+
+
+
+// LIMIT THE INPUT
+document.getElementById("set-h").addEventListener("input", function() {
+    let value = parseInt(this.value);
+    if (value < 3) {
+        this.value = 3;
+    } else if (value > 10) {
+        this.value = 10;
+    }
+});
+
+document.getElementById("set-w").addEventListener("input", function() {
+    let value = parseInt(this.value);
+    if (value < 3) {
+        this.value = 3;
+    } else if (value > 10) {
+        this.value = 10;
+    }
+});
