@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     const board = document.getElementById("board");
     const resultElement = document.getElementById("result");
-    const scoreElement = document.getElementById("score");
+    const scoreElement1= document.getElementById("score1");
+    const scoreElement2 = document.getElementById("score2");
+    const scoreElement3 = document.getElementById("score3");
     const resetBtn = document.getElementById("resetBtn");
 
     let boardState = Array(9).fill(null);
@@ -41,11 +43,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (checkWinner()) {
             gameActive = false;
-            resultElement.textContent = `Player ${currentPlayer} wins!`;
+            resultElement.textContent = `Играч ${currentPlayer} печели!`;
             updateScore(currentPlayer);
         } else if (boardState.every(cell => cell !== null)) {
             gameActive = false;
-            resultElement.textContent = "It's a tie!";
+            resultElement.textContent = "Равни!";
             updateScore("tie");
         } else {
             currentPlayer = currentPlayer === "X" ? "O" : "X";
@@ -67,7 +69,9 @@ document.addEventListener("DOMContentLoaded", function () {
             score.ties++;
         }
 
-        scoreElement.textContent = `Player X: ${score.player1} | Player O: ${score.player2} | Ties: ${score.ties}`;
+        scoreElement1.textContent = `Играч: ${score.player1}`;
+        scoreElement2.textContent = `Компютър: ${score.player2}`;
+        scoreElement3.textContent = `Равни: ${score.ties}`;
     }
 
     function resetGame() {
