@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Funfinity</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.15.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" type="text/css" href="../home_page/index.css" />
+    <link href="https://fonts.cdnfonts.com/css/games" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../2048/2048.css">
+    <title>2048</title>
 </head>
-
-<body class="overflow-y-hidden">
+<body>
+    
 
     <!-- HEADER -->
 
@@ -24,32 +27,14 @@
                 </div>
                 <div class="col">
                     <img type="button" class="icons" src="/images/settings1.svg" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">
+                        data-bs-target="#exampleModal" onclick="wait()">
                 </div>
             </div>
         </div>
     </header>
 
-    <div id="grid">
-        <a href="../tic_tac_toe/tic_tac_toe_game.html">
-            <div class="left">
-                <div class="overlay-text">TIC TAC TOE</div>
-            </div>
-        </a>
-        <a href="../nonograms/nonograms_game.html">
-            <div class="left-center">
-                <div class="overlay-text">NONOGRAMS</div>
-            </div>
-        </a>
-        <a href="../tetris/tetris.html">
-            <div class="right-center">
-                <div class="overlay-text">TETRIS</div>
-            </div>
-        </a>
-        <div class="right">
-            <div class="overlay-text">2048</div>
-        </div>
-    </div>
+    <!-- 2048 -->
+    
 
     <!-- MODAL SETTINGS -->
 
@@ -58,7 +43,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">SETTINGS</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="continuePlay()"></button>
                 </div>
                 <div class="modal-body container text-center">
                     <div class="row">
@@ -96,9 +81,54 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- MODAL HOW TO PLAY -->
+
+    <div class="modal fade" id="howToPlayModal" tabindex="-1" role="dialog" aria-labelledby="howToPlayModalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="howToPlayModalTitle">ПРАВИЛА</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="continuePlay()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="continuePlay()">Затвори</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL HISTORY -->
+
+    <div class="modal fade" id="historyModal" tabindex="-1" role="dialog" aria-labelledby="historyModalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="historyModalTitle">ИСТОРИЯ</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="continuePlay()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="continuePlay()">Затвори</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
+    <script src="../tetris/tetris.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>
