@@ -1,12 +1,11 @@
 body {
-    font-family: Helvetica, sans-serif;
     background-color: #adb5bd;
 }
 
 h1 {
     font-family: 'Games', sans-serif;
-}
 
+}
 
 .logo {
     width: 50px;
@@ -36,6 +35,47 @@ h1 {
     cursor: pointer;
     font-size: 3vh;
 
+}
+
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 469px;
+    height: 469px;
+    background-color: #3e3d40;
+    border: 7px solid #3e3d40;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+.grid div {
+    width: 100px;
+    height: 100px;
+    margin: 7px;
+    border-radius: 3px;
+    background-color: #adb5bd;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 60px;
+    line-height: 1.6;
+}
+
+.score-container {
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+    border-radius: 3px;
+    background-color: #3e3d40;
+    color: #FFFFFF;
+}
+
+#score {
+    font-size: 30px;
+}
+
+.score-title {
+    font-size: 16px;
 }
 
 .checkbox {
