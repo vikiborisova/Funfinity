@@ -28,40 +28,47 @@
                 </div>
                 <div class="col">
                     <img type="button" class="icons" src="/images/settings1.svg" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">
+                        data-bs-target="#exampleModal" onclick="wait()">
                 </div>
             </div>
         </div>
     </header>
 
     <!-- TETRIS -->
-    <!-- <h1 class="tex">Tetris</h1> -->
-    <div class="container-fluid text-center">
-        <div class="row">
-            
-            <div id="menu" class="col col-lg-4">
-                <canvas id="upcoming"></canvas>
-                <p>score <span id="score">00000</span></p>
-                <p>rows <span id="rows">0</span></p>
+
+    <div class="container-fluid text-center mt-5">
+
+        <div class="row d-flex align-items-center">
+
+            <div id="menu" class="col-lg-3 col-md-6 col-12">
+                <div>
+                    <h1>TETRIS</h1>
+                    <div class="empty"></div>
+                    <canvas id="upcoming"></canvas>
+                    <p>score <span id="score">00000</span></p>
+                    <p>rows <span id="rows">0</span></p>
+                </div>
             </div>
 
-            <div class="col col-lg-4">
+            <div class="col-lg-6 col-md-6 col-12">
                 <canvas id="canvas">
                 </canvas>
             </div>
 
-            <div class="col col-lg-4">
-                <div class="row d-flex justify-content-center mt-5">
-                    <button type="button" class="play" data-toggle="modal"
-                        data-target="#howToPlayModal">Правила</button>
-                    <button class="play" type="button" id="start"><a href="javascript:play();">Нова Игра</a></button>
-                    <button type="button" class="play" data-toggle="modal" data-target="#historyModal">История</button>
+            <div class="col-lg-3 col-12">
+                <div class="row d-flex justify-content-center buttons">
+
+                    <button type="button" class="play" data-toggle="modal" data-target="#howToPlayModal"
+                        onclick="wait()">Правила</button>
+                    <button id="start" type="button" class="play" onclick="play()">Нова игра</button>
+                    <button type="button" class="play" data-toggle="modal" data-target="#historyModal"
+                        onclick="wait()">История</button>
                 </div>
             </div>
         </div>
     </div>
 
-    
+
 
 
     <!-- MODAL SETTINGS -->
@@ -71,7 +78,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">SETTINGS</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="continuePlay()"></button>
                 </div>
                 <div class="modal-body container text-center">
                     <div class="row">
@@ -117,7 +124,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="howToPlayModalTitle">ПРАВИЛА</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="continuePlay()">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -125,7 +132,7 @@
                     ...
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Затвори</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="continuePlay()">Затвори</button>
                 </div>
             </div>
         </div>
@@ -139,7 +146,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="historyModalTitle">ИСТОРИЯ</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="continuePlay()">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -147,7 +154,7 @@
                     ...
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Затвори</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="continuePlay()">Затвори</button>
                 </div>
             </div>
         </div>

@@ -351,6 +351,7 @@ function onCellMouseUp(x, y) {
 
     isDragging = false;
 
+
     checkVictory();
 }
 
@@ -500,6 +501,7 @@ function checkVictory() {
         }
     }
 
+
     alert("You win!");
 }
 
@@ -511,7 +513,7 @@ reset();
 
 
 // LIMIT THE INPUT
-document.getElementById("set-h").addEventListener("input", function() {
+document.getElementById("set-h").addEventListener("input", function () {
     let value = parseInt(this.value);
     if (value < 3) {
         this.value = 3;
@@ -520,7 +522,7 @@ document.getElementById("set-h").addEventListener("input", function() {
     }
 });
 
-document.getElementById("set-w").addEventListener("input", function() {
+document.getElementById("set-w").addEventListener("input", function () {
     let value = parseInt(this.value);
     if (value < 3) {
         this.value = 3;
