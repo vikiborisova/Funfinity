@@ -20,14 +20,14 @@
 
     <header>
         <div class="container-fluid text-center mt-2">
-            <div class="row">
-                <div class="col">
+            <div class="w-100 d-flex justify-content-between">
+                <div class="">
                     <a href="/funfinity/funfinity.html"><img class="logo" src="/images/logo.png"></a>
                 </div>
                 <div class="col-10">
                     <h1 class="title">БЕЗКРАЙНА ЗАБАВА</h1>
                 </div>
-                <div class="col">
+                <div class="">
                     <img type="button" class="icons" src="/images/settings1.svg" data-bs-toggle="modal"
                         data-bs-target="#exampleModal">
                 </div>
@@ -100,10 +100,31 @@
                                     <span class="ball"></span>
                                 </label>
                                 <script>
-                                    const checkboxTheme = document.getElementById("themeCheckbox")
-                                    checkboxTheme.addEventListener("change", () => {
-                                        document.body.classList.toggle("dark")
-                                    })
+                                    function setInitialTheme() {
+                                        const currentTheme = localStorage.getItem("theme");
+                                        if (currentTheme === "dark") {
+                                            document.body.classList.add("dark");
+                                            checkboxTheme.checked = true;
+                                        } else {
+                                            document.body.classList.remove("dark");
+                                            checkboxTheme.checked = false;
+                                        }
+                                    }
+
+                                    function toggleTheme() {
+                                        if (document.body.classList.contains("dark")) {
+                                            document.body.classList.remove("dark");
+                                            localStorage.setItem("theme", "light");
+                                        } else {
+                                            document.body.classList.add("dark");
+                                            localStorage.setItem("theme", "dark");
+                                        }
+                                    }
+
+                                    const checkboxTheme = document.getElementById("themeCheckbox");
+                                    checkboxTheme.addEventListener("change", toggleTheme);
+
+                                    setInitialTheme();
                                 </script>
                             </div>
                         </div>
