@@ -74,31 +74,6 @@
                                 <label for="soundCheckbox" class="checkbox-label">
                                     <span class="ball"></span>
                                 </label>
-                                <audio id="audioPlayer" src="../images/Circus Clown Music - Sound Effect (HD).mp3"
-                                    loop></audio>
-                                    <script>
-                                        const soundCheckbox = document.getElementById('soundCheckbox');
-                                        const audioPlayer = document.getElementById('audioPlayer');
-    
-                                        const soundEnabled = localStorage.getItem('soundEnabled') === 'true';
-    
-                                        soundCheckbox.checked = soundEnabled;
-    
-                                        function toggleSound() {
-                                            if (soundCheckbox.checked) {
-                                                audioPlayer.play();
-                                                checkboxTheme.checked = true;
-                                            } else {
-                                                audioPlayer.pause();
-                                                checkboxTheme.checked = false;
-                                            }
-                                            localStorage.setItem('soundEnabled', soundCheckbox.checked);
-                                        }
-    
-                                        soundCheckbox.addEventListener('change', toggleSound);
-    
-                                        toggleSound();
-                                    </script>
                             </div>
                         </div>
                         <div class="col">

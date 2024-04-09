@@ -119,7 +119,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    filter: brightness(0.8);
+    position: relative;
+    filter: brightness(0.5);
 }
 
 .left-center {
@@ -127,7 +128,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    filter: brightness(0.8);
+    position: relative;
+    filter: brightness(0.5);
 }
 
 .right-center {
@@ -135,7 +137,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    filter: brightness(0.8);
+    position: relative;
+    filter: brightness(0.5);
 }
 
 .right {
@@ -143,9 +146,25 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    position: relative;
+    filter: brightness(0.5);
+}
+
+.left:hover {
     filter: brightness(0.8);
 }
 
+.left-center:hover {
+    filter: brightness(0.8);
+}
+
+.right-center:hover {
+    filter: brightness(0.8);
+}
+
+.right:hover {
+    filter: brightness(0.8);
+}
 
 :where(.left, .left-center, .right-center, .right):hover {
     width: 99%;
