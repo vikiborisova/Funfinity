@@ -8,20 +8,42 @@ h1 {
     font-family: 'Games', sans-serif;
 }
 
+header{
+    border-bottom: 5px solid #000040;
+ }
+
+
+.title {
+    font-family: 'Games', sans-serif;
+    color: #000040;
+    font-size: 90px;
+}
+
 .logo {
-    width: 50px;
-    height: 30px;
+    font-size: 40px;
+    color: #000040;
 }
 
 .icons {
-    width: 30px;
-    height: 30px;
+    font-size: 40px;
+    color: #000040;
 }
+
+.settings-icons{
+    font-size: 80px;
+    color: #000040;
+}
+
+.settings-title{
+    font-size: 25px;
+    color: #000040;
+}
+
 
 #game {
     border-spacing: 0px;
     border-collapse: collapse;
-    border: 1px solid black;
+    border: 1px solid #000040;
     user-select: none;
 }
 
@@ -34,13 +56,13 @@ h1 {
     font-weight: bold;
     padding: 10px 20px 10px 20px;
     background-color: #adb5bd;
-    text-shadow: -1px -1px black, 1px 1px white;
+    text-shadow: -1px -1px #000040, 1px 1px white;
     color: #3e3d40;
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
     -o-border-radius: 7px;
     border-radius: 7px;
-    box-shadow: 0 .2em #3e3d40;
+    box-shadow: 0 .2em #000040;
     cursor: pointer;
     font-size: 3vh;
 
@@ -70,7 +92,7 @@ th {
     vertical-align: middle;
 
     &:nth-child(20n + 1) {
-        border-right: 1px solid black;
+        border-right: 3px solid #000040;
     }
 }
 
@@ -79,7 +101,7 @@ tr {
 
         td,
         th {
-            border-bottom: 1px solid black;
+            border-bottom: 3px solid #000040;
         }
     }
 }
@@ -87,7 +109,7 @@ tr {
 th {
     background-color: #eee;
     font-family: 'Ubuntu Mono', monospace;
-    border: 1px solid black;
+    border: 3px solid #000040;
 
     &.highlight {
         background-color: #ccc;
@@ -95,8 +117,8 @@ th {
 }
 
 td {
-    border-top: 1px dotted black;
-    border-left: 1px dotted black;
+    border-top: 3px dotted #000040;
+    border-left: 3px dotted #000040;
 
     &:hover {
         opacity: 0.85;

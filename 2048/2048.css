@@ -6,16 +6,37 @@ h1 {
     font-family: 'Games', sans-serif;
 
 }
+header{
+    border-bottom: 5px solid #000040;
+ }
+
+
+.title {
+    font-family: 'Games', sans-serif;
+    color: #000040;
+    font-size: 90px;
+}
 
 .logo {
-    width: 50px;
-    height: 30px;
+    font-size: 40px;
+    color: #000040;
 }
 
 .icons {
-    width: 30px;
-    height: 30px;
+    font-size: 40px;
+    color: #000040;
 }
+
+.settings-icons{
+    font-size: 80px;
+    color: #000040;
+}
+
+.settings-title{
+    font-size: 25px;
+    color: #000040;
+}
+
 
 .play {
     width: 50%;
