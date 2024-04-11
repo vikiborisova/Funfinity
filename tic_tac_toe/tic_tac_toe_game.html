@@ -60,6 +60,8 @@
                                 <label for="soundCheckbox" class="checkbox-label">
                                     <span class="ball"></span>
                                 </label>
+                                <audio id="audioPlayer"
+                                    src="../images/Circus Clown Music - Sound Effect (HD).mp3"></audio>
                             </div>
                         </div>
                         <div class="col">
@@ -71,35 +73,6 @@
                                 <label for="themeCheckbox" class="checkbox-label">
                                     <span class="ball"></span>
                                 </label>
-                                <script>
-
-                                    function setInitialTheme() {
-                                        const currentTheme = localStorage.getItem("theme");
-                                        if (currentTheme === "dark") {
-                                            document.body.classList.add("dark");
-                                            checkboxTheme.checked = true;
-                                        } else {
-                                            document.body.classList.remove("dark");
-                                            checkboxTheme.checked = false;
-                                        }
-                                    }
-
-                                    function toggleTheme() {
-                                        if (document.body.classList.contains("dark")) {
-                                            document.body.classList.remove("dark");
-                                            localStorage.setItem("theme", "light");
-                                        } else {
-                                            document.body.classList.add("dark");
-                                            localStorage.setItem("theme", "dark");
-                                        }
-                                    }
-
-                                    const checkboxTheme = document.getElementById("themeCheckbox");
-                                    checkboxTheme.addEventListener("change", toggleTheme);
-
-                                    setInitialTheme();
-
-                                </script>
                             </div>
                         </div>
                     </div>
@@ -108,7 +81,7 @@
         </div>
     </div>
 
-
+    <script src="../settings/sound_theme.js"></script>
 </body>
 
 </html>

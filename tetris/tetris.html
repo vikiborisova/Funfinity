@@ -19,16 +19,16 @@
 
     <header>
         <div class="container-fluid text-center mt-2">
-            <div class="row">
-                <div class="col">
+            <div class="w-100 d-flex justify-content-between">
+                <div class="">
                     <a href="/funfinity/funfinity.html"><img class="logo" src="/images/logo.png"></a>
                 </div>
                 <div class="col-10">
                     <h1 class="title">БЕЗКРАЙНА ЗАБАВА</h1>
                 </div>
-                <div class="col">
+                <div class="">
                     <img type="button" class="icons" src="/images/settings1.svg" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal" onclick="wait()">
+                        data-bs-target="#exampleModal">
                 </div>
             </div>
         </div>
@@ -92,6 +92,7 @@
                                 <label for="soundCheckbox" class="checkbox-label">
                                     <span class="ball"></span>
                                 </label>
+                                <audio id="audioPlayer" src="../images/Circus Clown Music - Sound Effect (HD).mp3"></audio>
                             </div>
                         </div>
                         <div class="col">
@@ -103,33 +104,6 @@
                                 <label for="themeCheckbox" class="checkbox-label">
                                     <span class="ball"></span>
                                 </label>
-                                <script>
-                                    function setInitialTheme() {
-                                        const currentTheme = localStorage.getItem("theme");
-                                        if (currentTheme === "dark") {
-                                            document.body.classList.add("dark");
-                                            checkboxTheme.checked = true;
-                                        } else {
-                                            document.body.classList.remove("dark");
-                                            checkboxTheme.checked = false;
-                                        }
-                                    }
-
-                                    function toggleTheme() {
-                                        if (document.body.classList.contains("dark")) {
-                                            document.body.classList.remove("dark");
-                                            localStorage.setItem("theme", "light");
-                                        } else {
-                                            document.body.classList.add("dark");
-                                            localStorage.setItem("theme", "dark");
-                                        }
-                                    }
-
-                                    const checkboxTheme = document.getElementById("themeCheckbox");
-                                    checkboxTheme.addEventListener("change", toggleTheme);
-
-                                    setInitialTheme();
-                                </script>
                             </div>
                         </div>
                     </div>
@@ -190,6 +164,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../settings/sound_theme.js"></script>
 </body>
 
 </html>
