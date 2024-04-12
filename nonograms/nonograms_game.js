@@ -26,15 +26,11 @@ function fillArrayColumnwise(array, col, value, rowOffset, rowCount) {
 function shuffle(array) {
     let counter = array.length;
 
-    // While there are elements in the array
     while (counter > 0) {
-        // Pick a random index
         let index = Math.floor(Math.random() * counter);
 
-        // Decrease counter by 1
         counter--;
 
-        // And swap the last element with it
         let temp = array[counter];
         array[counter] = array[index];
         array[index] = temp;
@@ -53,7 +49,6 @@ function generateField() {
         }
     };
 
-    // Create clear field
     let mainField = st.field;
     for (let i = 0; i < h; i++) {
         mainField[i] = [];
@@ -62,12 +57,7 @@ function generateField() {
         }
     }
 
-    // Generate horizontal keys
-
-    // Maximum of keys
     let maxKeys;
-    // Optimal values by my personal opinion :)
-    // Switched by the level of 5:
     switch (Math.floor(h / 5)) {
         case 1:
             maxKeys = 2;
@@ -89,11 +79,8 @@ function generateField() {
     let hkeys = st.keys.h;
     for (let i = 0; i < w; i++) {
         hkeys[i] = [];
-        // Number of keys in a column
-        // From 1 to h/2 keys with higher expectation on lesser values
         let n = getRandomInt(1, maxKeys);
 
-        // Create n keys
         let left = h - n + 1;
         let key;
         for (let j = 0; j < n; j++) {
@@ -102,11 +89,9 @@ function generateField() {
             hkeys[i].push(key);
         }
 
-        // Put them in a ramdom order
         shuffle(hkeys[i]);
     }
 
-    // Add offsets to the keys
     let offsets = [];
     for (let i = 0; i < w; i++) {
         offsets[i] = [];
@@ -120,10 +105,8 @@ function generateField() {
             offsets[i].push(offset);
             left -= offset;
         }
-        // Randomize offset order
         shuffle(offsets[i]);
 
-        // Add first and last offsets
         let offset = getRandomInt(0, left);
         offsets[i].unshift(offset);
         left -= offset;
@@ -131,7 +114,6 @@ function generateField() {
         offsets[i].push(left);
     }
 
-    // Generate solution
     let field = st.solution;
     for (let i = 0; i < h; i++) {
         field[i] = [];
@@ -143,22 +125,16 @@ function generateField() {
         let offset = 0;
 
         for (let j = 0; j < kn; j++) {
-            // Fill offset
-            // offset is empty cells, value - 1
             fillArrayColumnwise(field, i, 1, offset, offs[j]);
             offset += offs[j];
 
-            // Fill key
-            // key points to filled cells, value - 2
             fillArrayColumnwise(field, i, 2, offset, keys[j]);
             offset += keys[j];
         }
 
-        // Fill the last offset
         fillArrayColumnwise(field, i, 1, offset, offs[kn]);
     }
 
-    // Get vertical keys using solution field
     let vkeys = st.keys.v;
     for (let i = 0; i < h; i++) {
         vkeys[i] = [];
@@ -186,7 +162,6 @@ function generateField() {
 /* UI */
 
 let cells = [];
-// Verticat and horizontal header elements
 let headers = {
     h: [],
     v: []
@@ -200,7 +175,6 @@ function highlightCellOff(cell) {
     cell.classList.remove("highlight");
 }
 
-// TODO support multiline highlight
 function highlightHeadersOn(x, y) {
     if (typeof x == "number") {
         highlightCellOn(headers.v[y]);
@@ -222,7 +196,6 @@ function highlightHeadersOff() {
     }
 }
 
-/* Mouse events */
 
 let isDragging = false;
 let startX, startY, mouseState;
@@ -233,14 +206,11 @@ function getAffectedCellsRange(startX, startY, lastX, lastY) {
         xmax = Math.max(startX, lastX),
         ymax = Math.max(startY, lastY);
 
-    // True - vertical, false - hozirontal
     let direction = xmax - xmin < ymax - ymin;
 
     let range = [];
 
     if (mouseState == "none") {
-        // If deselecting, all the cells between
-        // given coordinates are affected
         for (let i = xmin; i <= xmax; i++) {
             for (let j = ymin; j <= ymax; j++) {
                 let el = {
@@ -303,8 +273,6 @@ function onCellMouseDown(x, y, e) {
 
 function onCellMouseEnter(x, y) {
     if (isDragging) {
-        // Remove previous cells' marks in case
-        // of selection direction change
         for (let i = 0; i < h; i++) {
             resetCellMark(startX, i);
         }
@@ -369,16 +337,13 @@ function resetCellMark(x, y) {
 function renderTable() {
     let table = document.getElementById("game");
 
-    // Clear table
     while (table.firstChild) {
         table.removeChild(table.firstChild);
     }
 
-    // Reset UI state
     cells = [];
     headers = { h: [], v: [] };
 
-    // Create headers
 
     for (let i = 0; i < w; i++) {
         let el = document.createElement("th");
@@ -390,7 +355,6 @@ function renderTable() {
         headers.v.push(el);
     }
 
-    // Create cells
     for (let i = 0; i < h; i++) {
         cells[i] = [];
 
@@ -412,11 +376,9 @@ function renderTable() {
         }
     }
 
-    // Append horizontal headers row
 
     let headerTr = document.createElement("tr");
 
-    // Create empty firt header element
     let emptyHeader = document.createElement("th");
     headerTr.appendChild(emptyHeader);
 
@@ -425,7 +387,6 @@ function renderTable() {
     }
     table.appendChild(headerTr);
 
-    // Append the rest of rows
     for (let i = 0; i < h; i++) {
         let tr = document.createElement("tr");
         tr.appendChild(headers.v[i]);
@@ -510,9 +471,6 @@ document.getElementById("solution").onclick = showSolution;
 
 reset();
 
-
-
-// LIMIT THE INPUT
 document.getElementById("set-h").addEventListener("input", function () {
     let value = parseInt(this.value);
     if (value < 3) {

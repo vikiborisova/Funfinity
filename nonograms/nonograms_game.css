@@ -1,32 +1,38 @@
 @import url('https://fonts.cdnfonts.com/css/games');
 
 body {
-    background-color: #adb5bd;
+    background-color: #C7B59C;
 }
 
 h1 {
     font-family: 'Games', sans-serif;
 }
-
-header{
+ header{
     border-bottom: 5px solid #000040;
  }
-
 
 .title {
     font-family: 'Games', sans-serif;
     color: #000040;
     font-size: 90px;
+    text-shadow: -2px -2px #CF8540;
+}
+
+.game-text{
+    font-family: 'Games', sans-serif;
+    color: #000040;
+    font-size: 40px;
+    text-shadow: -1px -1px #CF8540;
 }
 
 .logo {
     font-size: 40px;
-    color: #000040;
+    color: #CF8540;
 }
 
 .icons {
     font-size: 40px;
-    color: #000040;
+    color: #CF8540;
 }
 
 .settings-icons{
@@ -40,10 +46,11 @@ header{
 }
 
 
+
 #game {
     border-spacing: 0px;
     border-collapse: collapse;
-    border: 1px solid #000040;
+    border: 2px solid #000040;
     user-select: none;
 }
 
@@ -55,14 +62,14 @@ header{
     margin: 5px;
     font-weight: bold;
     padding: 10px 20px 10px 20px;
-    background-color: #adb5bd;
+    background-color: #CF8540;
     text-shadow: -1px -1px #000040, 1px 1px white;
-    color: #3e3d40;
+    color: #000080;
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
     -o-border-radius: 7px;
     border-radius: 7px;
-    box-shadow: 0 .2em #000040;
+    box-shadow: 0 .2em #000080;
     cursor: pointer;
     font-size: 3vh;
 
@@ -126,11 +133,11 @@ td {
     }
 
     &.on {
-        background-color: #6d6;
+        background-color: #0C007A;
     }
 
     &.off {
-        background-color: #666;
+        background-color: #cba27c;
     }
 }
 

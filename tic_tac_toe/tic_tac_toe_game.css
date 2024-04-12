@@ -1,7 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/games');
 
 body {
-    background-color: #AEBBB7;
+    background-color: #C7B59C;
 }
 
 h1 {
@@ -15,16 +15,24 @@ h1 {
     font-family: 'Games', sans-serif;
     color: #000040;
     font-size: 90px;
+    text-shadow: -2px -2px #CF8540;
+}
+
+.game-text{
+    font-family: 'Games', sans-serif;
+    color: #000040;
+    font-size: 40px;
+    text-shadow: -1px -1px #CF8540;
 }
 
 .logo {
     font-size: 40px;
-    color: #000040;
+    color: #CF8540;
 }
 
 .icons {
     font-size: 40px;
-    color: #000040;
+    color: #CF8540;
 }
 
 .settings-icons{
@@ -58,17 +66,20 @@ h1 {
 
 #result {
     font-size: 30px;
-
+    color: #BF5C00;
 }
 
 #score1 {
     font-size: 30px;
+    color: #000040;
 }
 #score2 {
     font-size: 30px;
+    color: #000040;
 }
 #score3 {
     font-size: 30px;
+    color: #000040;
 }
 
 .play {
@@ -77,8 +88,8 @@ h1 {
     margin: 5px;
     font-weight: bold;
     padding: 10px 20px 10px 20px;
-    background-color: #51A0B1;
-    text-shadow: -1px -1px 000040, 1px 1px white;
+    background-color: #CF8540;
+    text-shadow: -1px -1px #000040, 1px 1px white;
     color: #000080;
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
@@ -141,5 +152,6 @@ h1 {
 }
 
 body.dark {
-    background-color: #3e3d40;
+    background-color: #000040;
+
 }

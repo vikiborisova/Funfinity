@@ -69,8 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
             score.ties++;
         }
 
-        scoreElement1.textContent = `Играч: ${score.player1}`;
-        scoreElement2.textContent = `Компютър: ${score.player2}`;
+        scoreElement1.textContent = `Играч X: ${score.player1}`;
+        scoreElement2.textContent = `Играч O: ${score.player2}`;
         scoreElement3.textContent = `Равни: ${score.ties}`;
     }
 

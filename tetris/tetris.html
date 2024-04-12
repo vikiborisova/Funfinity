@@ -28,7 +28,8 @@
                     <h1 class="title">FUNFINITY</h1>
                 </div>
                 <div class="">
-                    <i type="button" class="bi bi-gear icons" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+                    <i onclick="wait()" type="button" class="bi bi-gear icons" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"></i>
                 </div>
             </div>
         </div>
@@ -36,7 +37,7 @@
 
     <!-- TETRIS -->
 
-    <div class="container-fluid text-center mt-5">
+    <div class="container-fluid text-center mt-2">
 
         <div class="row d-flex align-items-center">
 
@@ -73,7 +74,9 @@
 
     <!-- MODAL SETTINGS -->
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        onclick="continuePlay()">
+
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -92,7 +95,8 @@
                                 <label for="soundCheckbox" class="checkbox-label">
                                     <span class="ball"></span>
                                 </label>
-                                <audio id="audioPlayer" src="../images/Circus Clown Music - Sound Effect (HD).mp3"></audio>
+                                <audio id="audioPlayer"
+                                    src="../images/Circus Clown Music - Sound Effect (HD).mp3"></audio>
                             </div>
                         </div>
                         <div class="col">
@@ -115,7 +119,7 @@
     <!-- MODAL HOW TO PLAY -->
 
     <div class="modal fade" id="howToPlayModal" tabindex="-1" role="dialog" aria-labelledby="howToPlayModalTitle"
-        aria-hidden="true">
+        aria-hidden="true" onclick="continuePlay()">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -139,7 +143,7 @@
     <!-- MODAL HISTORY -->
 
     <div class="modal fade" id="historyModal" tabindex="-1" role="dialog" aria-labelledby="historyModalTitle"
-        aria-hidden="true">
+        aria-hidden="true" onclick="continuePlay()">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
