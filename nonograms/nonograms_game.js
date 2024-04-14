@@ -159,7 +159,6 @@ function generateField() {
     return st;
 }
 
-/* UI */
 
 let cells = [];
 let headers = {
