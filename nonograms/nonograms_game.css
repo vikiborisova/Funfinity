@@ -1,48 +1,48 @@
 @import url('https://fonts.cdnfonts.com/css/games');
 
 body {
-    background-color: #C7B59C;
+    background-color: #ddc8ea;
 }
 
 h1 {
     font-family: 'Games', sans-serif;
 }
  header{
-    border-bottom: 5px solid #000040;
+    border-bottom: 5px solid #080942;
  }
 
 .title {
     font-family: 'Games', sans-serif;
-    color: #000040;
+    color: #080942;
     font-size: 90px;
-    text-shadow: -2px -2px #CF8540;
+    text-shadow: -2px -2px #431C76;
 }
 
 .game-text{
     font-family: 'Games', sans-serif;
-    color: #000040;
+    color: #080942;
     font-size: 40px;
-    text-shadow: -1px -1px #CF8540;
+    text-shadow: -1px -1px #431C76;
 }
 
 .logo {
     font-size: 40px;
-    color: #CF8540;
+    color: #080942;
 }
 
 .icons {
     font-size: 40px;
-    color: #CF8540;
+    color: #080942;
 }
 
 .settings-icons{
     font-size: 80px;
-    color: #000040;
+    color: #080942;
 }
 
 .settings-title{
     font-size: 25px;
-    color: #000040;
+    color: #080942;
 }
 
 
@@ -62,23 +62,23 @@ h1 {
     margin: 5px;
     font-weight: bold;
     padding: 10px 20px 10px 20px;
-    background-color: #CF8540;
-    text-shadow: -1px -1px #000040, 1px 1px white;
-    color: #000080;
+    background-color: #A282BF;
+    text-shadow: -1px -1px #431C76, 1px 1px white;
+    color: #080942;
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
     -o-border-radius: 7px;
     border-radius: 7px;
-    box-shadow: 0 .2em #000080;
+    box-shadow: 0 .2em #080942;
     cursor: pointer;
     font-size: 3vh;
 
 }
 
 .solution {
-    background-color: transparent;
+    background-color: #A282BF;
     cursor: pointer;
-
+    border-radius: 7px;
     width: 50px;
     height: 50px; 
     background-image: url('../images/solution.png');
@@ -133,11 +133,11 @@ td {
     }
 
     &.on {
-        background-color: #0C007A;
+        background-color: #221C69;
     }
 
     &.off {
-        background-color: #cba27c;
+        background-color: #7069b9;
     }
 }
 
