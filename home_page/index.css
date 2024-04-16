@@ -126,6 +126,7 @@ h1 {
 }
 
 .overlay-text {
+    font-family: 'Games', sans-serif;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -219,6 +220,20 @@ h1 {
 }
 
 
-body.dark {
-    background-color: #463b4c;
+.dark {
+    background-color: #080942;
+    
+    .title {
+        color: #A282BF;
+        text-shadow: -2px -2px white;
+    }
+
+    .logo {
+        color: #A282BF;
+    }
+    
+    .icons {
+        color: #A282BF;
+    }
+    
 }

@@ -7,9 +7,10 @@ body {
 h1 {
     font-family: 'Games', sans-serif;
 }
- header{
+
+header {
     border-bottom: 5px solid #080942;
- }
+}
 
 .title {
     font-family: 'Games', sans-serif;
@@ -18,7 +19,7 @@ h1 {
     text-shadow: -2px -2px #431C76;
 }
 
-.game-text{
+.game-text {
     font-family: 'Games', sans-serif;
     color: #080942;
     font-size: 40px;
@@ -35,12 +36,12 @@ h1 {
     color: #080942;
 }
 
-.settings-icons{
+.settings-icons {
     font-size: 80px;
     color: #080942;
 }
 
-.settings-title{
+.settings-title {
     font-size: 25px;
     color: #080942;
 }
@@ -73,10 +74,12 @@ h1 {
     font-size: 30px;
     color: #431C76;
 }
+
 #score2 {
     font-size: 30px;
     color: #431C76;
 }
+
 #score3 {
     font-size: 30px;
     color: #431C76;
@@ -98,7 +101,7 @@ h1 {
 
 }
 
-.records{
+.records {
     height: 100%;
     width: 100%;
     border: 2px solid #000040;
@@ -148,7 +151,68 @@ h1 {
     background-color: green;
 }
 
-body.dark {
-    background-color: #463b4c;
+.dark {
+    background-color: #080942;
 
+    .title {
+        color: #A282BF;
+        text-shadow: -2px -2px white;
+    }
+
+    .logo {
+        color: #A282BF;
+    }
+
+    .icons {
+        color: #A282BF;
+    }
+
+    #result {
+        color: #431C76;
+        text-shadow: -1px -1px solid white;
+    }
+
+    #score1 {
+        color: #A282BF;
+    }
+
+    #score2 {
+        color: #A282BF;
+    }
+
+    #score3 {
+        color: #A282BF;
+    }
+
+    .records {
+        border: 2px solid #A282BF;
+    }
+
+    .game-text {
+        color: #A282BF;
+        text-shadow: -1px -1px white;
+    }
+
+    #board {
+        border: 1px solid #A282BF;
+    }
+
+    .cell {
+        border: 1px solid #A282BF;
+    }
+
+    header {
+        border-bottom: 5px solid #A282BF;
+    }
+
+    .play {
+        background-color: #A282BF;
+        text-shadow: -1px -1px #431C76, 1px 1px white;
+        color: #080942;
+        box-shadow: 0 .2em #431C76;
+
+    }
+    .cell {
+        color: #ddc8ea;
+    }
 }

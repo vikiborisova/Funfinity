@@ -1,3 +1,5 @@
+// DARK THEME
+
 function setInitialTheme() {
     const currentTheme = localStorage.getItem("theme");
     if (currentTheme === "dark") {
@@ -21,26 +23,27 @@ const checkboxTheme = document.getElementById("themeCheckbox");
 checkboxTheme.addEventListener("change", toggleTheme);
 
 
-
+//SOUND
 const soundCheckbox = document.getElementById('soundCheckbox');
 const audioPlayer = document.getElementById('audioPlayer');
-let soundEnabled = sessionStorage.getItem('soundEnabled') === 'true';
+let soundEnabled = localStorage.getItem('soundEnabled') === 'true';
 soundCheckbox.checked = soundEnabled;
 
 function toggleSound() {
     if (soundCheckbox.checked) {
+        
         audioPlayer.play();
     } else {
         audioPlayer.pause();
     }
-    sessionStorage.setItem('soundEnabled', soundCheckbox.checked);
+    localStorage.setItem('soundEnabled', soundCheckbox.checked);
 }
 
-soundCheckbox.addEventListener('change', toggleSound);
+soundCheckbox.addEventListener("change", toggleSound);
 
 window.addEventListener("pageshow", function (event) {
     setInitialTheme();
-    soundEnabled = sessionStorage.getItem('soundEnabled') === 'true';
+    soundEnabled = localStorage.getItem('soundEnabled') === 'true';
     soundCheckbox.checked = soundEnabled;
     toggleSound();
 });

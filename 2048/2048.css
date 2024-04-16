@@ -151,6 +151,35 @@ header {
     background-color: green;
 }
 
-body.dark {
-    background-color: #3e3d40;
+.dark {
+    background-color: #080942;
+    
+    .title {
+        color: #A282BF;
+        text-shadow: -2px -2px white;
+    }
+
+    .logo {
+        color: #A282BF;
+    }
+    
+    .icons {
+        color: #A282BF;
+    }
+    
+    header {
+        border-bottom: 5px solid #A282BF;
+    }
+
+    .play {
+        background-color: #A282BF;
+        text-shadow: -1px -1px #431C76, 1px 1px white;
+        color: #080942;
+        box-shadow: 0 .2em #431C76;
+
+    }
+    .game-text {
+        color: #A282BF;
+        text-shadow: -1px -1px white;
+    }
 }

@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const width = 4
     let score = 0
 
-    //create the playing board
     function createBoard() {
         for (let i = 0; i < width * width; i++) {
             square = document.createElement('div')
@@ -138,7 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
         checkForWin()
     }
 
-    //assign functions to keyCodes
     function control(e) {
         if (e.keyCode === 37) {
             keyLeft()
@@ -180,7 +178,6 @@ document.addEventListener('DOMContentLoaded', () => {
         generate()
     }
 
-    //check for the number 2048 in the squares to win
     function checkForWin() {
         for (let i = 0; i < squares.length; i++) {
             if (squares[i].innerHTML == 2048) {
@@ -191,7 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    //check if there are no zeros on the board to lose
     function checkForGameOver() {
         let zeros = 0
         for (let i = 0; i < squares.length; i++) {
@@ -206,13 +202,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    //clear timer
     function clear() {
         clearInterval(myTimer)
     }
 
 
-    //add colours
     function addColours() {
         for (let i = 0; i < squares.length; i++) {
             if (squares[i].innerHTML == 0) squares[i].style.backgroundColor = 'white'

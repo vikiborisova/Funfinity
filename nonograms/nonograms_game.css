@@ -7,9 +7,10 @@ body {
 h1 {
     font-family: 'Games', sans-serif;
 }
- header{
+
+header {
     border-bottom: 5px solid #080942;
- }
+}
 
 .title {
     font-family: 'Games', sans-serif;
@@ -18,7 +19,7 @@ h1 {
     text-shadow: -2px -2px #431C76;
 }
 
-.game-text{
+.game-text {
     font-family: 'Games', sans-serif;
     color: #080942;
     font-size: 40px;
@@ -35,12 +36,12 @@ h1 {
     color: #080942;
 }
 
-.settings-icons{
+.settings-icons {
     font-size: 80px;
     color: #080942;
 }
 
-.settings-title{
+.settings-title {
     font-size: 25px;
     color: #080942;
 }
@@ -80,7 +81,7 @@ h1 {
     cursor: pointer;
     border-radius: 7px;
     width: 50px;
-    height: 50px; 
+    height: 50px;
     background-image: url('../images/solution.png');
     background-size: cover;
     background-position: center;
@@ -196,6 +197,85 @@ td {
     background-color: green;
 }
 
-body.dark {
-    background-color: #3e3d40;
+.dark {
+    background-color: #080942;
+
+    .title {
+        color: #A282BF;
+        text-shadow: -2px -2px white;
+    }
+
+    .logo {
+        color: #A282BF;
+    }
+
+    .icons {
+        color: #A282BF;
+    }
+
+    header {
+        border-bottom: 5px solid #A282BF;
+    }
+
+    .play {
+        background-color: #A282BF;
+        text-shadow: -1px -1px #431C76, 1px 1px white;
+        color: #080942;
+        box-shadow: 0 .2em #431C76;
+
+    }
+
+    .game-text {
+        color: #A282BF;
+        text-shadow: -1px -1px white;
+    }
+
+    td,
+    th {
+        &:nth-child(20n + 1) {
+            border-right: 3px solid #ddc8ea;
+        }
+    }
+
+    tr {
+        &:nth-child(20n + 1) {
+
+            td,
+            th {
+                border-bottom: 3px solid #ddc8ea;
+            }
+        }
+    }
+
+    th {
+        background-color: #A282BF;
+        border: 3px solid #ddc8ea;
+
+        &.highlight {
+            background-color: #ccc;
+        }
+    }
+
+    td {
+        border-top: 3px dotted #ddc8ea;
+        border-left: 3px dotted #ddc8ea;
+
+        &:hover {
+            background-color: #f3f3f3;
+        }
+
+        &.on {
+            background-color: #431C76;
+        }
+
+        &.off {
+            background-color: #7069b9;
+        }
+    }
+    #game {
+        border: 2px solid #ddc8ea;
+    }
+    .parameters{
+        color: #ddc8ea;
+    }
 }
