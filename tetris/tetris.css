@@ -160,6 +160,12 @@ header {
         color: #A282BF;
         text-shadow: -1px -1px white;
     }
+    .result {
+        color: #A282BF;
+    }
+    #upcoming{
+        background-color: #A282BF;
+    }
 
 }
 

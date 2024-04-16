@@ -182,4 +182,14 @@ header {
         color: #A282BF;
         text-shadow: -1px -1px white;
     }
+
+    .score-container {
+        background-color: #A282BF;
+        color: #080942;
+    }
+    .grid {
+        background-color: #A282BF;
+        border: 7px solid #A282BF;
+    }
+
 }
