@@ -189,16 +189,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function checkForGameOver() {
-        let zeros = 0
+        let movesAvailable = false;
         for (let i = 0; i < squares.length; i++) {
             if (squares[i].innerHTML == 0) {
-                zeros++
+                movesAvailable = true;
+                break;
             }
         }
-        if (zeros === 0) {
-            alert("You Lose!!!")
-            document.removeEventListener('keyup', control)
-            setTimeout(() => clear(), 3000)
+        for (let i = 0; i < squares.length; i++) {
+            if (i % width < width - 1) {
+                if (squares[i].innerHTML == squares[i + 1].innerHTML) {
+                    movesAvailable = true;
+                    break;
+                }
+            }
+            if (Math.floor(i / width) < width - 1) {
+                if (squares[i].innerHTML == squares[i + width].innerHTML) {
+                    movesAvailable = true;
+                    break;
+                }
+            }
+        }
+        if (!movesAvailable) {
+            document.removeEventListener('keyup', control);
+            setTimeout(() => clear(), 3000);
+            alert("You Lose!!!");
         }
     }
 
@@ -217,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
             else if (squares[i].innerHTML == 32) squares[i].style.backgroundColor = '#5C2A9D'
             else if (squares[i].innerHTML == 64) squares[i].style.backgroundColor = '#42367F'
             else if (squares[i].innerHTML == 128) squares[i].style.backgroundColor = '#352C9D'
-            else if (squares[i].innerHTML == 256) squares[i].style.backgroundColor = '#E8DDF2'
+            else if (squares[i].innerHTML == 256) squares[i].style.backgroundColor = '#521C84'
             else if (squares[i].innerHTML == 512) squares[i].style.backgroundColor = '#A282BF'
             else if (squares[i].innerHTML == 1024) squares[i].style.backgroundColor = '#822F7B'
             else if (squares[i].innerHTML == 2048) squares[i].style.backgroundColor = '#350B31'
