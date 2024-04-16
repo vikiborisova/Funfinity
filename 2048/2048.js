@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const width = 4
     let score = 0
 
+    //създава решетката
     function createBoard() {
         for (let i = 0; i < width * width; i++) {
             square = document.createElement('div')
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     createBoard()
 
+    //генерира блокче със стойност 2 след всеки ход
     function generate() {
         randomNumber = Math.floor(Math.random() * squares.length)
         if (squares[randomNumber].innerHTML == 0) {
@@ -26,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else generate()
     }
 
+    //сумира блокчета с преместване надясно ако е възможно
     function moveRight() {
         for (let i = 0; i < 16; i++) {
             if (i % 4 === 0) {
@@ -48,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    //сумира блокчета с преместване наляво ако е възможно
     function moveLeft() {
         for (let i = 0; i < 16; i++) {
             if (i % 4 === 0) {
@@ -71,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
+    //сумира блокчета с преместване нагоре ако е възможно
     function moveUp() {
         for (let i = 0; i < 4; i++) {
             let totalOne = squares[i].innerHTML
@@ -91,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    //сумира блокчета с преместване надолу ако е възможно
     function moveDown() {
         for (let i = 0; i < 4; i++) {
             let totalOne = squares[i].innerHTML
@@ -111,6 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    //функцията за сумиране по редове
     function combineRow() {
         for (let i = 0; i < 15; i++) {
             if (squares[i].innerHTML === squares[i + 1].innerHTML) {
@@ -124,6 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         checkForWin()
     }
 
+    //функцията за сумиране по колони
     function combineColumn() {
         for (let i = 0; i < 12; i++) {
             if (squares[i].innerHTML === squares[i + width].innerHTML) {
@@ -137,6 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
         checkForWin()
     }
 
+    //командите от клавиатурата --> стрелките
     function control(e) {
         if (e.keyCode === 37) {
             keyLeft()
@@ -150,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     document.addEventListener('keyup', control)
 
+    //дясна стрелка
     function keyRight() {
         moveRight()
         combineRow()
@@ -157,6 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
         generate()
     }
 
+    //лява стрелка
     function keyLeft() {
         moveLeft()
         combineRow()
@@ -164,6 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
         generate()
     }
 
+    //горна стрелка
     function keyUp() {
         moveUp()
         combineColumn()
@@ -171,6 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
         generate()
     }
 
+    //долна стрелка
     function keyDown() {
         moveDown()
         combineColumn()
@@ -178,6 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
         generate()
     }
 
+    //проверява за победа
     function checkForWin() {
         for (let i = 0; i < squares.length; i++) {
             if (squares[i].innerHTML == 2048) {
@@ -188,6 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    //проверява за загуба
     function checkForGameOver() {
         let movesAvailable = false;
         for (let i = 0; i < squares.length; i++) {
@@ -217,11 +232,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    //изчиства таймера
     function clear() {
         clearInterval(myTimer)
     }
 
 
+    //задава цвят за всяко блокче
     function addColours() {
         for (let i = 0; i < squares.length; i++) {
             if (squares[i].innerHTML == 0) squares[i].style.backgroundColor = 'white'
@@ -245,6 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const restartButton = document.getElementById('restart-button')
     restartButton.addEventListener('click', refreshPage)
 
+    //рестартира страницата
     function refreshPage() {
         location.reload()
     }
