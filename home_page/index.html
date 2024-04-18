@@ -24,6 +24,7 @@
                     <h1 class="title">FUNFINITY</h1>
                 </div>
                 <div class="">
+                    <i type="button" class="bi bi-info-circle icons" data-bs-toggle="modal" data-bs-target="#aboutModal"> </i>
                     <i type="button" class="bi bi-gear icons" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
                 </div>
             </div>
@@ -76,9 +77,8 @@
                                 <label for="soundCheckbox" class="checkbox-label">
                                     <span class="ball"></span>
                                 </label>
-                                <audio id="audioPlayer"
-                                autoplay
-                                    src="../images/Circus Clown Music - Sound Effect (HD).mp3"></audio>
+                                <audio id="audioPlayer" autoplay
+                                    src="../sources/Circus Clown Music - Sound Effect (HD).mp3"></audio>
                             </div>
                         </div>
                         <div class="col">
@@ -98,6 +98,37 @@
         </div>
     </div>
 
+    <!-- MODAL INFO -->
+
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="aboutModalLabel">ИНФОРМАЦИЯ</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex flex-column align-items-center">
+                    <img class="logo-about" src="../sources/logo.png" alt="FUNFINITY">
+                    FUNFINITY
+                    <div>
+                        <p> Уеб приложение с четири интерактивни, развиващи мисленето и следването на стратегия игри.
+                            Четирите игри са „Морски шах“, „Нонограми“, „Тетрис“ и „2048“. Всяка от игрите в
+                            основата си е пъзелна игра и за победа е нужно малко повече от просто безразборно щракане.
+                            За всяка една от игрите са предоставени интересни факти, както и правила за самата игра,
+                            обяснени възможно по най-лесния и разбираем начин.</p>
+                        <br><br>
+                        <p> Приложението е създадено като проект по дипломна работа за придобиване на трета степен на
+                            професионална квалификация по професия "Системен програмист", специалност "Системно
+                            програмиране".</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Затвори</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- TIC TAC TOE MODAL -->
 
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -110,8 +141,10 @@
                 </div>
                 <div class="modal-body">
                     <div class="d-flex justify-content-center">
-                        <a href="../tic_tac_toe/tic_tac_toe_game_1_player.html"><button class="play">Играч VS Компютър</button></a>
-                        <a href="../tic_tac_toe/tic_tac_toe_game_2_players.html"><button class="play">Играч 1 VS Играч 2</button></a>
+                        <a href="../tic_tac_toe/tic_tac_toe_game_1_player.html"><button class="play">Играч VS
+                                Компютър</button></a>
+                        <a href="../tic_tac_toe/tic_tac_toe_game_2_players.html"><button class="play">Играч 1 VS Играч
+                                2</button></a>
                     </div>
                 </div>
             </div>

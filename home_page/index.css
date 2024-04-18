@@ -37,7 +37,10 @@ h1 {
     font-size: 25px;
     color:#080942;
 }
-
+.logo-about{
+    
+    width: 80%;
+}
 
 * {
     box-sizing: border-box;
@@ -145,7 +148,7 @@ h1 {
 }
 
 .left {
-    background-image: url(../images/tic_tac_toe.png);
+    background-image: url(../sources/tic_tac_toe.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -154,7 +157,7 @@ h1 {
 }
 
 .left-center {
-    background-image: url(../images/nonograms.png);
+    background-image: url(../sources/nonograms.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -163,7 +166,7 @@ h1 {
 }
 
 .right-center {
-    background-image: url(../images/tetris.png);
+    background-image: url(../sources/tetris.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -172,7 +175,7 @@ h1 {
 }
 
 .right {
-    background-image: url(../images/2048.png);
+    background-image: url(../sources/2048.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

@@ -31,6 +31,11 @@ header {
     color: #080942;
 }
 
+.logo-about{
+    
+    width: 80%;
+}
+
 .icons {
     font-size: 40px;
     color: #080942;
@@ -82,7 +87,7 @@ header {
     border-radius: 7px;
     width: 50px;
     height: 50px;
-    background-image: url('../images/solution.png');
+    background-image: url('../sources/solution.png');
     background-size: cover;
     background-position: center;
 
