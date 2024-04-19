@@ -26,6 +26,12 @@ header {
     text-shadow: -1px -1px #431C76;
 }
 
+.info-text{
+    font-family: 'Games', sans-serif;
+    margin-top: 15px;
+    font-size: 40px;
+}
+
 .logo {
     font-size: 40px;
     color: #080942;

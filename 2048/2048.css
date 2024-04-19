@@ -29,6 +29,11 @@ header {
     width: 80%;
 }
 
+.info-text{
+    font-family: 'Games', sans-serif;
+    margin-top: 15px;
+    font-size: 40px;
+}
 
 .icons {
     font-size: 40px;

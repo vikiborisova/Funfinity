@@ -28,6 +28,12 @@ h1 {
     color: #080942;
 }
 
+.info-text{
+    font-family: 'Games', sans-serif;
+    margin-top: 15px;
+    font-size: 40px;
+}
+
 .settings-icons{
     font-size: 80px;
     color: #080942;
