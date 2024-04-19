@@ -1,5 +1,7 @@
+// Дефинира възможните опции за клетките
 const CELL_STATES = ["none", "off", "on"];
 
+// променливи за полето и състоянието на играта
 let w, h;
 let fstate = {
     field: [],
@@ -12,17 +14,19 @@ let fstate = {
 let solutionOn = false,
     solutionShown = false;
 
+// Генерира случайно число между минимума и максимума
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// Функция за попълване на 2D масив
 function fillArrayColumnwise(array, col, value, rowOffset, rowCount) {
     for (let i = rowOffset; i < rowOffset + rowCount; i++) {
         array[i][col] = value;
     }
 }
 
-// https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+// Функция която разбърква масива
 function shuffle(array) {
     let counter = array.length;
 
@@ -39,6 +43,7 @@ function shuffle(array) {
     return array;
 }
 
+// Генерира полето за игра
 function generateField() {
     let st = {
         field: [],
@@ -49,6 +54,7 @@ function generateField() {
         }
     };
 
+    // Имплементира 0 на началните клетки
     let mainField = st.field;
     for (let i = 0; i < h; i++) {
         mainField[i] = [];
@@ -57,6 +63,7 @@ function generateField() {
         }
     }
 
+    // Генерира ключове за всяка колона (хоризонтални ключове)
     let maxKeys;
     switch (Math.floor(h / 5)) {
         case 1:
@@ -92,6 +99,7 @@ function generateField() {
         shuffle(hkeys[i]);
     }
 
+    // генерира отмествания за всяка колона
     let offsets = [];
     for (let i = 0; i < w; i++) {
         offsets[i] = [];
@@ -114,6 +122,7 @@ function generateField() {
         offsets[i].push(left);
     }
 
+    // генерира решение на базата на ключовете и отместванията
     let field = st.solution;
     for (let i = 0; i < h; i++) {
         field[i] = [];
@@ -135,6 +144,7 @@ function generateField() {
         fillArrayColumnwise(field, i, 1, offset, offs[kn]);
     }
 
+    // генерира вертикални ключове на базата на решението
     let vkeys = st.keys.v;
     for (let i = 0; i < h; i++) {
         vkeys[i] = [];
@@ -159,21 +169,24 @@ function generateField() {
     return st;
 }
 
-
+// Инициализиране на масиви за клетки и header-и
 let cells = [];
 let headers = {
     h: [],
     v: []
 };
 
+// функция за подчертаване/запълване/отбелязване на клетка
 function highlightCellOn(cell) {
     cell.classList.add("highlight");
 }
 
+// функция за премахване на подчертаване/запълване/отбелязване на клетка
 function highlightCellOff(cell) {
     cell.classList.remove("highlight");
 }
 
+// функция за подчертаване header-и на базата на координатите на клетката
 function highlightHeadersOn(x, y) {
     if (typeof x == "number") {
         highlightCellOn(headers.v[y]);
@@ -185,6 +198,7 @@ function highlightHeadersOn(x, y) {
     }
 }
 
+// премахва подчертаването от всички клетки
 function highlightHeadersOff() {
     for (let i = 0; i < h; i++) {
         highlightCellOff(headers.v[i]);
@@ -195,10 +209,11 @@ function highlightHeadersOff() {
     }
 }
 
-
+// Променливи за проследяване на състоянието и координатите на плъзгане на мишката
 let isDragging = false;
 let startX, startY, mouseState;
 
+// Функция за получаване на обхвата на засегнатите клетки по време на плъзгане
 function getAffectedCellsRange(startX, startY, lastX, lastY) {
     let xmin = Math.min(startX, lastX),
         ymin = Math.min(startY, lastY),
@@ -242,6 +257,7 @@ function getAffectedCellsRange(startX, startY, lastX, lastY) {
     return range;
 }
 
+// Обработчик на събития за мишката върху клетка
 function onCellMouseDown(x, y, e) {
     if (solutionOn) return;
 
@@ -270,6 +286,7 @@ function onCellMouseDown(x, y, e) {
     return false;
 }
 
+//Обработчик на събития за въвеждане на мишката в клетка
 function onCellMouseEnter(x, y) {
     if (isDragging) {
         for (let i = 0; i < h; i++) {
@@ -294,6 +311,7 @@ function onCellMouseEnter(x, y) {
     }
 }
 
+// Обработчик на събития за напускане на клетка от мишката
 function onCellMouseLeave(x, y) {
     highlightHeadersOff();
 
@@ -302,6 +320,7 @@ function onCellMouseLeave(x, y) {
     }
 }
 
+// Манипулатор на събития за мишката върху клетка
 function onCellMouseUp(x, y) {
     if (solutionOn) return;
 
@@ -318,21 +337,23 @@ function onCellMouseUp(x, y) {
 
     isDragging = false;
 
-
     checkVictory();
 }
 
+// Функция за маркиране на клетка със състояние
 function markCell(x, y, state) {
     let cell = cells[y][x];
     cell.classList.remove(...CELL_STATES);
     cell.classList.add(state);
 }
 
+// Функция за нулиране на знака на клетка
 function resetCellMark(x, y) {
     const state = CELL_STATES[fstate.field[y][x]];
     markCell(x, y, state);
 }
 
+//Функция за изобразяване на игралната решетка
 function renderTable() {
     let table = document.getElementById("game");
 
@@ -342,7 +363,6 @@ function renderTable() {
 
     cells = [];
     headers = { h: [], v: [] };
-
 
     for (let i = 0; i < w; i++) {
         let el = document.createElement("th");
@@ -375,7 +395,6 @@ function renderTable() {
         }
     }
 
-
     let headerTr = document.createElement("tr");
 
     let emptyHeader = document.createElement("th");
@@ -396,6 +415,7 @@ function renderTable() {
     }
 }
 
+// Функция за настройка на полето на таблицата
 function setTableField(field) {
     for (let i = 0; i < h; i++) {
         for (let j = 0; j < w; j++) {
@@ -405,6 +425,7 @@ function setTableField(field) {
     }
 }
 
+//Функция за задаване на header-ите на таблицата
 function setTableHeaders(keys) {
     for (let i = 0; i < h; i++) {
         let str = keys.v[i].join(" ");
@@ -417,12 +438,14 @@ function setTableHeaders(keys) {
     }
 }
 
+// рестартиране на играта
 function reset() {
     h = 15;
     w = 15;
     reload();
 }
 
+//презареждане на играта
 function reload() {
     solutionOn = false;
     solutionShown = false;
@@ -432,9 +455,10 @@ function reload() {
 
     fstate = generateField();
     renderTable();
-    redraw()
+    redraw();
 }
 
+// Функция за преначертаване на игралната решетка
 function redraw() {
     setTableHeaders(fstate.keys);
     if (solutionOn) {
@@ -444,32 +468,49 @@ function redraw() {
     }
 }
 
+// скрива/показва решението
 function showSolution() {
     solutionShown = true;
     solutionOn = !solutionOn;
     redraw();
 }
 
+// проверява за победа
 function checkVictory() {
     if (solutionOn) return false;
 
+    let markedCells = 0;
+    let correctCells = 0;
+
     for (let i = 0; i < h; i++) {
         for (let j = 0; j < w; j++) {
-            if (fstate.solution[i][j] !== fstate.field[i][j]) {
-                return false;
+            if (fstate.field[i][j] !== 0) { // проверява дали всички клетки са запълнени
+                markedCells++;
+
+                if (fstate.solution[i][j] === fstate.field[i][j]) { // проверява дали запълнените клетки отговарят на решението
+                    correctCells++;
+                }
             }
         }
     }
 
-
-    alert("You win!");
+    if (markedCells === h * w) { // ако клетките са запълнени
+        if (correctCells === h * w) {
+            alert("Поздравения! Спечели играта!");
+        } else {
+            alert("Ти загуби! Маркираните клетки не отговарят на решението! Опитай отново!\n \n Ако желаеш да провериш къде ти е грешката, натисни бутона с крушката 'Решение'.");
+        }
+    }
 }
 
+// Слушатели на събития за бутони "Нова игра" и  "Решение"
 document.getElementById("new-game").onclick = reload;
 document.getElementById("solution").onclick = showSolution;
 
+// Първоначална настройка на играта
 reset();
 
+// Слушатели на събития за полета за въвеждане за ограничаване на измерения между 3 и 10
 document.getElementById("set-h").addEventListener("input", function () {
     let value = parseInt(this.value);
     if (value < 3) {
