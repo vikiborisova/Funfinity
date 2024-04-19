@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function checkForWin() {
         for (let i = 0; i < squares.length; i++) {
             if (squares[i].innerHTML == 2048) {
-                alert("You Win!!!")
+                alert("Поздравления! Ти спечели и достигна 2048!")
                 document.removeEventListener('keyup', control)
                 setTimeout(() => clear(), 3000)
             }
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!movesAvailable) {
             document.removeEventListener('keyup', control);
             setTimeout(() => clear(), 3000);
-            alert("You Lose!!!");
+            alert("Ти загуби! Опитай отново!");
         }
     }
 
